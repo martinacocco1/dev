@@ -1,15 +1,43 @@
-# What is this?
+float planetAngle = 0;
+PImage bg;
 
-The github.dev web-based editor is a lightweight editing experience that runs entirely in your browser. You can navigate files and source code repositories from GitHub, and make and commit code changes.
+void setup() {
+  size(300, 270);
+  bg = loadImage("sky-lights-space-dark.jpg");
+}
 
-There are two ways to go directly to a VS Code environment in your browser and start coding:
+void draw() {
+  background(0);
+  image(bg, 0, 0);
+  
+ fill(0, 0, 0, 100);  
+ stroke(255);
+ ellipse(150, 130, 200, 210);
+ ellipse(140, 120, 180, 160);
+ ellipse(150, 130, 230, 210);
 
-* Press the . key on any repository or pull request.
-* Swap `.com` with `.dev` in the URL. For example, this repo https://github.com/github/dev becomes http://github.dev/github/dev
+ 
+  translate(width/2, height/2);
+  fill(250, 236, 164);
+  ellipse(0, 0, 70, 70);
+  
+  fill(188, 234, 255);
+  ellipse(50, 40, 10, 10);
+  
+    fill(252, 232, 194);
+  ellipse(-90, -50, 30, 30);
+  
+      fill(242, 122, 146);
+  ellipse(90, 50, 20, 20);
+  
 
-Preview the gif below to get a quick demo of github.dev in action.
+  pushMatrix();
+  rotate(planetAngle); 
+  translate(100, 0);
+  fill(247, 220, 246);
+  ellipse(0, 0, 20, 20);
 
-![github dev](https://user-images.githubusercontent.com/856858/130119109-4769f2d7-9027-4bc4-a38c-10f297499e8f.gif)
+  popMatrix();
 
-# Why?
-It’s a quick way to edit and navigate code. It's especially useful if you want to edit multiple files at a time or take advantage of all the powerful code editing features of Visual Studio Code when making a quick change. For more information, see our [documentation](https://github.co/codespaces-editor-help).
+  planetAngle += 0.01;
+}
